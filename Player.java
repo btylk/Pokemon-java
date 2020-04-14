@@ -66,7 +66,7 @@ public class Player {
         return myDmg;
     }
 
-    public int getKillCount(){
+    public int getWinCount(){
         return wincount;
     }
     

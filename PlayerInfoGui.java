@@ -61,14 +61,14 @@ public class PlayerInfoGui extends JFrame{
                 dispose();
             }
         });
-        /*pokeball.addActionListener(new ActionListener(){
+        battleArena.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e){
-                new MyPokemonGui(new Froakie(""),1);
+                new VersusGui(player);
                 dispose();
             }
-        });*/
+        });
 
 
 

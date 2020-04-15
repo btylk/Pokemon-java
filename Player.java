@@ -11,7 +11,7 @@ public class Player {
     protected int wincount;
     private String name;
     private String evoLevel;
-    //protected ArrayList<Skill> skills;
+    protected ArrayList<Skill> skills;
     public Bag myBag;
     protected String playerPic;
     
@@ -43,7 +43,7 @@ public class Player {
         return maxHp;
     }
 
-    public int gethp() {
+    public int getHp() {
         return hp;
     }
 
@@ -123,13 +123,13 @@ public class Player {
         mp = maxMp / 2;
     }
     
-    /*public int getnumberskill(){
+    public int getnumberskill(){
         return skills.size();
     }
 
     public Skill getSkill(int index){
         return skills.get(index);
-    }*/
+    }
 
     public String getPic(){
         return playerPic;

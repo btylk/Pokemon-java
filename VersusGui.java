@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class VersusGui extends JFrame{
 
-    public VersusGui(/*Player player*/){
+    public VersusGui(Player player){
         super("Select Enemy");
         Container container = getContentPane();
         container.setLayout(new FlowLayout());
@@ -117,7 +117,7 @@ public class VersusGui extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         new VersusGui();
-    }
+    }*/
 }

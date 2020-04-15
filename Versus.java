@@ -18,8 +18,25 @@ public class Versus extends JFrame{
         container.add(logo,BorderLayout.NORTH);
         JPanel p2 = new JPanel();
         p2.setLayout(new GridLayout(1,2));
-
-
+        ImageIcon playerImg = new ImageIcon(/*player.getPic()*/"Froakie2.png");
+        //JLabel playPic =new JLabel(playerImg);
+        Image moPlayPic = playerImg.getImage();
+        Image modifiedplayPic = moPlayPic.getScaledInstance(183, 218, java.awt.Image.SCALE_SMOOTH);
+        playerImg = new ImageIcon(modifiedplayPic);
+        JLabel playImg = new JLabel(playerImg);
+        p2.add(playImg);
+        JPanel enemy = new JPanel();
+        enemy.setLayout(new GridLayout(2,2));
+        JPanel MegaCharizardX = new JPanel();
+        ImageIcon icon1 =new ImageIcon("MegaCharizardX.png");
+        Image moicon1 = icon1.getImage();
+        Image modifiedicon1 = moicon1.getScaledInstance(214, 185, java.awt.Image.SCALE_SMOOTH);
+        icon1 = new ImageIcon(modifiedicon1);
+        JLabel Icon1 = new JLabel(icon1);
+        JButton button1 = new JButton("MegaCharizardX");
+        p2.add(Icon1,button1);
+        container.add(p2,BorderLayout.CENTER);
+        
 
 
 

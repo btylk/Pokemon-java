@@ -9,7 +9,7 @@ public class MegaCharizardX extends WildPokemon{
         dmg = 1080;
         dropRate = 75;
         itemDrop = new Berry();
-        pic = "MegaCharizardX.png";
+        pic = "MegaCharizardX2.png";
 
     }
 }

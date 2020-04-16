@@ -8,6 +8,6 @@ public class Froakie extends Player{
         mp = maxMp;
         exp = 0;
         myDmg = 20;
-        playerPic = "Froakie2.png";
+        playerPic = "Froakie3.png";
     }
 }

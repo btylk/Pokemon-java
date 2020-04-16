@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class WildPokemonGui extends JFrame{
-    JLabel pokemonHp;
+    JLabel wildPokemonHP;
     WildPokemon wildPokemon;
     public WildPokemonGui(WildPokemon wildPokemon,Player player,JButton attack){
         super(wildPokemon.getName());
@@ -16,16 +16,16 @@ public class WildPokemonGui extends JFrame{
         container.add(panel);
         JLabel pokemonLabel = new JLabel("Name : " + wildPokemon.getName());
         JLabel pokemonLV = new JLabel("Level : " + wildPokemon.getlvl());
-        pokemonHp = new JLabel("HP : " + wildPokemon.getHp() + "/" + wildPokemon.getMaxHp());
+        wildPokemonHP = new JLabel("HP : " + wildPokemon.getHp() + "/" + wildPokemon.getMaxHp());
         panel.add(pokemonLabel);
         panel.add(pokemonLV);
-        panel.add(pokemonHp);
+        panel.add(wildPokemonHP);
         setLocationRelativeTo(null);
         attack.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 wildPokemon.takingDmg(player.getDmg());
-                pokemonHp.setText("HP : " + wildPokemon.getHp() + "/" + wildPokemon.getMaxHp());
+                wildPokemonHP.setText("HP : " + wildPokemon.getHp() + "/" + wildPokemon.getMaxHp());
             }
         });
         setSize(500,500);

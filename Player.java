@@ -26,7 +26,7 @@ public class Player {
         exp = 0;
         myDmg = 0;
         wincount = 0;
-        //skills = new ArrayList<Skill>();
+        skills = new ArrayList<Skill>();
         myBag =new Bag();
         playerPic ="";
     }

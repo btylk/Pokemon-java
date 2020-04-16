@@ -45,6 +45,7 @@ public class BattleArena extends JFrame{
         wPokemonstatus.add(wPokemonStatLabel);
         wPokemonstatus.add(wPokemonLabel);
         wPokemonstatus.add(wPokemonLV);
+        wPokemonstatus.add(wildPokemonHP);
         status.add(wPokemonstatus);
         ImageIcon playPic = new ImageIcon(player.getPic());
         JLabel playImg = new JLabel(playPic);
@@ -169,14 +170,50 @@ public class BattleArena extends JFrame{
             panel.setVisible(false);
             itemJPanel.remove(0);
             playerHP.setText("HP : " + player.getHp() + " / " + player.getmaxHp());
-            
+            playerMP.setText("MP : " + player.getMp() + " / " + player.getmaxMp());
         }
     }
 
-
-
-
-
-
+    public class SkillUsed implements ActionListener{
+        int i;
+        Player player;
+        WildPokemon wildPokemon;
+        public SkillUsed(int index,Player player,WildPokemon wildPokemon){
+            i = index;
+            this.player = player;
+            this.wildPokemon = wildPokemon;
+        }
+        @Override
+        public void actionPerformed(ActionEvent e){
+            if(player.getMp() >= player.getSkill(i).getSkillMpUse()){
+                wildPokemon.takingDmg(player.getSkill(i).getSkillDamage());
+                player.useMp(player.getSkill(i).getSkillMpUse());
+                playerMP.setText("MP : " + player.getMp() + " / " + player.getmaxMp());
+                wildPokemonHP.setText("HP : " + wildPokemon.getHp() + " / " + wildPokemon.getMaxHp());
+                if(wildPokemon.getHp() <= 0){
+                    player.expgain(wildPokemon.getExp());
+                    Item dropItem = wildPokemon.DropItem();
+                    if(dropItem != null){
+                        player.myBag.addItem(dropItem);
+                    }
+                    dispose();
+                    new PlayerInfoGui(player);
+                }
+                else{
+                    player.dmgToHp(wildPokemon.getDmg());
+                    playerHP.setText("HP : " + player.getHp() + " / " + player.getmaxHp());
+                    if(player.isPlayerDie()){
+                        player.resurrection();
+                        dispose();
+                        new PlayerInfoGui(player);
+                    }
+                    skillPanel.setVisible(false);
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(container, "Not Enough MP");
+            }
+        }
+    }
 
 }

@@ -24,7 +24,7 @@ public class VersusGui extends JFrame{
         MegaEmpoleon.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         MegaLucario.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         MegaMewtwoX.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-        ImageIcon icon1 =new ImageIcon("MegaCharizardX.png");
+        ImageIcon icon1 =new ImageIcon("MegaCharizardX2.png");
         Image moicon1 = icon1.getImage();
         Image modifiedicon1 = moicon1.getScaledInstance(270, 210, java.awt.Image.SCALE_SMOOTH);
         icon1 = new ImageIcon(modifiedicon1);
@@ -64,11 +64,11 @@ public class VersusGui extends JFrame{
         MegaEmpoleon.add(set2);
         MegaLucario.add(set3);
         MegaMewtwoX.add(set4);
-        /*button1.addActionListener(new ActionListener(){
+        button1.addActionListener(new ActionListener(){
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new GreenSlime());
+                new BattleArena(player, new MegaCharizardX());
                 dispose();
             }
         });
@@ -76,7 +76,7 @@ public class VersusGui extends JFrame{
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new BlueSlime());
+                new BattleArena(player, new MegaEmpoleon());
                 dispose();
             }
         });
@@ -84,7 +84,7 @@ public class VersusGui extends JFrame{
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new RedSlime());
+                new BattleArena(player, new MegaLucario());
                 dispose();
             }
         });
@@ -92,26 +92,11 @@ public class VersusGui extends JFrame{
         
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new GoldenSlime());
+                new BattleArena(player, new MegaMewtwoX());
                 dispose();
             }
         });
-        button5.addActionListener(new ActionListener(){
-        
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new BlackBowSlime());
-                dispose();
-            }
-        });
-        button6.addActionListener(new ActionListener(){
-        
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new BattleArena(player, new NekoSlime());
-                dispose();
-            }
-        });*/
+
         
         pack();
         setVisible(true);

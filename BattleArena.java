@@ -26,7 +26,7 @@ public class BattleArena extends JFrame{
         JLabel playerStatLabel = new JLabel("Player Status");
         JLabel playerLabel = new JLabel("Name : " + player.getName());
         JLabel playerEvo = new JLabel("Evo : " + player.getEvoLevel());
-        JLabel playerLV = new JLabel("Level : " + player.getlvl());
+        JLabel playerLV = new JLabel("Level : " + player.getlvl() + " EXP : " + player.getexp());
         playerHP = new JLabel("HP : " + player.getHp() + " / " + player.getmaxHp());
         playerMP = new JLabel("MP : " + player.getMp() + " / " + player.getmaxMp()); 
         playerstatus.add(playerStatLabel);

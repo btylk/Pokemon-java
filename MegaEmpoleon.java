@@ -9,7 +9,7 @@ public class MegaEmpoleon extends WildPokemon{
         dmg = 880;
         dropRate = 60;
         itemDrop = new Berry();
-        pic = "MegaEmpoleon.png";
+        pic = "MegaEmpoleon2.png";
 
     }
 }

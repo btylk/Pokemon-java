@@ -9,7 +9,7 @@ public class MegaLucario extends WildPokemon{
         dmg = 980;
         dropRate = 90;
         itemDrop = new Berry();
-        pic = "MegaLucario.png";
+        pic = "MegaLucario3.png";
 
     }
 }

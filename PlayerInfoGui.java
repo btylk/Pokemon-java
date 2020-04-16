@@ -37,9 +37,9 @@ public class PlayerInfoGui extends JFrame{
         p1.add(logo);
         container.add(logo,BorderLayout.NORTH);
         ImageIcon playerImg = new ImageIcon(player.getPic());
-        Image moPoke = playerImg.getImage();
+        /*Image moPoke = playerImg.getImage();
         Image modifiedpoke = moPoke.getScaledInstance(183, 218, java.awt.Image.SCALE_SMOOTH);
-        playerImg = new ImageIcon(modifiedpoke);
+        playerImg = new ImageIcon(modifiedpoke);*/
         JLabel playPic =new JLabel(playerImg);
         p2.add(playPic);
         p2.add(status);
@@ -47,12 +47,21 @@ public class PlayerInfoGui extends JFrame{
         JButton battleArena = new JButton("Battle Arena");
         //JButton pokeball = new JButton("Pokeball");
         JButton bag = new JButton("Bag");
+        JButton Evolution = new JButton("Evolution");
         JPanel select = new JPanel();
         select.setLayout(new FlowLayout());
         select.add(battleArena);
+        select.add(Evolution);
         //select.add(pokeball);
         select.add(bag);
+        Evolution.setVisible(false);
         container.add(select,BorderLayout.SOUTH);
+        if(player.getlvl() >= 10 && player.getEvoLevel().equals("Froakie")){
+            Evolution.setVisible(true);
+        }
+        else if(player.getlvl() >= 25 && player.getEvoLevel().equals("Frogadier")){
+            Evolution.setVisible(true);
+        }
         bag.addActionListener(new ActionListener(){
 
             @Override
@@ -66,6 +75,14 @@ public class PlayerInfoGui extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                 new VersusGui(player);
+                dispose();
+            }
+        });
+        Evolution.addActionListener(new ActionListener(){
+        
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Evolution(player);
                 dispose();
             }
         });

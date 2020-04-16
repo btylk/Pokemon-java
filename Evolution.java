@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 public class Evolution extends JFrame{
     Player player;
-    public Evolution(/*Player player*/){
+    public Evolution(Player player){
         super("Evolution");
         //this.player = player;
         Container container = getContentPane();
@@ -39,21 +39,32 @@ public class Evolution extends JFrame{
         evoButton.setLayout(new GridLayout(1,2));
         JPanel frogadierPanel = new JPanel();
         JButton frogadierButton = new JButton("Evolution to Frogadier");
+        JLabel hint = new JLabel("You are already Frogadier");
         frogadierPanel.add(frogadierButton);
+        frogadierPanel.add(hint);
         JPanel greninjaPanel = new JPanel();
         JButton greninjaButton = new JButton("Evolution to Greninja");
-        JLabel hint = new JLabel("Available For Frogadier LV 30");
+        JLabel hint2 = new JLabel("Available For Frogadier LV 25");
         greninjaPanel.add(greninjaButton);
-        greninjaPanel.add(hint);
+        greninjaPanel.add(hint2);
         evoButton.add(frogadierPanel);
         evoButton.add(greninjaPanel);
+        frogadierButton.setVisible(false);
         greninjaButton.setVisible(false);
         //evoPanel.add(playPic);
         //evoPanel.add(status);
         container.add(evoPanel,BorderLayout.CENTER);
         container.add(evoButton,BorderLayout.SOUTH);
+        if(player.getlvl() >= 25 && player.getEvoLevel().equals("Frogadier")){
+            greninjaButton.setVisible(true);
+            frogadierButton.setVisible(false);
+            hint.setVisible(true);
+            hint2.setVisible(false);
+            
+        }
+        
 
-        /*frogadierButton.addActionListener(new ActionListener(){
+        frogadierButton.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e){
@@ -67,18 +78,18 @@ public class Evolution extends JFrame{
             public void actionPerformed(ActionEvent e){
                 new PlayerInfoGui(new Greninja(player));
             }
-        });*/
+        });
 
 
 
 
-        setSize(700,500);
+        setSize(700,550);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         new Evolution();
-    }
+    }*/
 
 }

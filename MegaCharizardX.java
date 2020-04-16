@@ -3,10 +3,11 @@ public class MegaCharizardX extends WildPokemon{
 
     public MegaCharizardX(){
         super("MegaCharizardX");
-        maxHp = 2152;
+        maxHp = 352;
         hp = maxHp;
-        level = 70;
-        dmg = 1080;
+        exp = 100;
+        level = 25;
+        dmg = 30;
         dropRate = 75;
         itemDrop = new Berry();
         pic = "MegaCharizardX2.png";

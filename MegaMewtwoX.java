@@ -2,13 +2,13 @@
 public class MegaMewtwoX extends WildPokemon{
     public MegaMewtwoX(){
         super("MegaMewtwoX");
-        maxHp = 2252;
+        maxHp = 9999;
         hp = maxHp;
-        level = 70;
-        dmg = 880;
-        dropRate = 55;
+        level = 99;
+        dmg = 9880;
+        dropRate = 99;
         itemDrop = new Berry();
-        pic = "MegaMewtwoX.png";
+        pic = "MegaMewtwoX2.png";
 
     }
 }

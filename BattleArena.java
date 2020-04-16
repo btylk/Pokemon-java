@@ -28,7 +28,7 @@ public class BattleArena extends JFrame{
         JLabel playerEvo = new JLabel("Evo : " + player.getEvoLevel());
         JLabel playerLV = new JLabel("Level : " + player.getlvl());
         playerHP = new JLabel("HP : " + player.getHp() + " / " + player.getmaxHp());
-        playerMP = new JLabel("MP : " + player.getMp() + " / " + player.getMaxMp()); 
+        playerMP = new JLabel("MP : " + player.getMp() + " / " + player.getmaxMp()); 
         playerstatus.add(playerStatLabel);
         playerstatus.add(playerLabel);
         playerstatus.add(playerEvo);
@@ -75,16 +75,108 @@ public class BattleArena extends JFrame{
         select.add(bag);
         select.add(run);
         allButton.add(select);
-        
+        Bag playerBag = player.myBag;
+        panel = new JPanel();
+        JPanel itemPanel = new JPanel();
+        itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.Y_AXIS));
+        panel.add(itemPanel);
+        for(int i = 0; i < playerBag.getNumberItem(); i++){
+            buttons.add(new JButton(playerBag.getItem(i).getItemName()));
+            itemPanel.add(buttons.get(i));
+            buttons.get(i).addActionListener(new InnerBagGui(i,player,itemPanel));
 
+        }
+        allButton.add(panel);
+        panel.setVisible(false);
+        container.add(status);
+        container.add(pic);
+        container.add(allButton);
 
+        attack.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                wildPokemon.takingDmg(player.getDmg());
+                wildPokemonHP.setText("HP : " + wildPokemon.getHp() + " / " + wildPokemon.getMaxHp());
+                if(wildPokemon.getHp() <= 0 ){
+                    player.expgain(wildPokemon.getExp());
+                    Item dropItem = wildPokemon.DropItem();
+                    if(dropItem != null){
+                        player.myBag.addItem(dropItem);
+                    }
+                    dispose();
+                    new PlayerInfoGui(player);
+                }
+                else{
+                    player.dmgToHp(wildPokemon.getDmg());
+                    playerHP.setText("HP : " + player.getHp() + " / " + player.getmaxHp());
+                    if(player.isPlayerDie()){
+                        player.resurrection();
+                        dispose();
+                        new PlayerInfoGui(player);
+                    }
+                }
+            }
+        });
 
+        bag.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(panel.isShowing()){
+                    panel.setVisible(false);
+                }
+                else{
+                    panel.setVisible(true);
+                }
+            }
+        });
 
+        skill.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(skillPanel.isShowing()){
+                    skillPanel.setVisible(false);
+                }
+                else{
+                    skillPanel.setVisible(true);
+                }
+            }
+        });
 
-
-
-
-
-
+        run.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new PlayerInfoGui(player);
+            }
+        });
+        setSize(1060,720);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    public class InnerBagGui implements ActionListener{
+        int i;
+        Player player;
+        JPanel itemJPanel;
+        public InnerBagGui(int index,Player player,JPanel itemJPanel){
+            i = index;
+            this.player = player;
+            this.itemJPanel = itemJPanel;
+        }
+        public void actionPerformed(ActionEvent e){
+            player.useBerry(player.myBag.getItem(0));
+            player.myBag.removeItem(0);
+            panel.setVisible(false);
+            itemJPanel.remove(0);
+            playerHP.setText("HP : " + player.getHp() + " / " + player.getmaxHp());
+            
+        }
+    }
+
+
+
+
+
+
+
 }

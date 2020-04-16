@@ -19,8 +19,8 @@ public class PlayerInfoGui extends JFrame{
         JLabel playerEvo = new JLabel("Evo : " + player.getEvoLevel());
         JLabel playerLV = new JLabel("Level : " + player.getlvl());
         JLabel playerExp = new JLabel("Exp : " + player.getexp());
-        JLabel playerHP = new JLabel("HP : " + player.gethp() + " / " + player.getmaxHp());
-        JLabel playerMp = new JLabel("MP : " + player.getMp() + " / " + player.getMaxMp());
+        JLabel playerHP = new JLabel("HP : " + player.getHp() + " / " + player.getmaxHp());
+        JLabel playerMp = new JLabel("MP : " + player.getMp() + " / " + player.getmaxMp());
         JLabel winCount = new JLabel("Win : " + player.getWinCount());
         status.add(playerLabel);
         status.add(playerEvo);

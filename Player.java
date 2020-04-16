@@ -47,7 +47,7 @@ public class Player {
         return hp;
     }
 
-    public int getMaxMp(){
+    public int getmaxMp(){
         return maxMp;
     }
 

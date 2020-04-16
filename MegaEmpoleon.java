@@ -5,8 +5,9 @@ public class MegaEmpoleon extends WildPokemon{
         super("MegaEmpoleon");
         maxHp = 2252;
         hp = maxHp;
-        level = 70;
-        dmg = 880;
+        exp = 450;
+        level = 50;
+        dmg = 280;
         dropRate = 60;
         itemDrop = new Berry();
         pic = "MegaEmpoleon2.png";

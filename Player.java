@@ -102,11 +102,11 @@ public class Player {
         while (exp >= level * 10) {
             exp = exp - (level * 10);
             level++;
-            maxHp = maxHp + 20;
-            maxMp = maxMp +10;
+            maxHp = maxHp + 25;
+            maxMp = maxMp + 15;
             hp = maxHp;
             mp = maxMp;
-            myDmg += 5;
+            myDmg += 20;
             System.out.println("Level Up!!!!!");
         }
     }

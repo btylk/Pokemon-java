@@ -49,8 +49,9 @@ public class Evolution extends JFrame{
         greninjaPanel.add(hint2);
         evoButton.add(frogadierPanel);
         evoButton.add(greninjaPanel);
-        frogadierButton.setVisible(false);
+        frogadierButton.setVisible(true);
         greninjaButton.setVisible(false);
+        hint.setVisible(false);
         //evoPanel.add(playPic);
         //evoPanel.add(status);
         container.add(evoPanel,BorderLayout.CENTER);
@@ -69,6 +70,7 @@ public class Evolution extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                 new PlayerInfoGui(new Frogadier(player));
+                dispose();
             }
         });
 
@@ -77,6 +79,7 @@ public class Evolution extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                 new PlayerInfoGui(new Greninja(player));
+                dispose();
             }
         });
 

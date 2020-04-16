@@ -1,0 +1,43 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Evolution extends JFrame{
+    Player player;
+    public Evolution(/*Player player*/){
+        super("Evolution");
+        //this.player = player;
+        Container container = getContentPane();
+        container.setLayout(new GridLayout(2,1));
+        JPanel p1 = new JPanel();
+        container.add(p1);
+        JPanel evoPic = new JPanel();
+        evoPic.setLayout(new GridLayout(1,2));
+        ImageIcon frogadierPic = new ImageIcon("Frogadier.png");
+        Image moicon3 = frogadierPic.getImage();
+        Image modifiedicon3 = moicon3.getScaledInstance(267, 213, java.awt.Image.SCALE_SMOOTH);
+        frogadierPic = new ImageIcon(modifiedicon3);
+        JLabel frogadierLabel = new JLabel(frogadierPic);
+        evoPic.add(frogadierLabel);
+        ImageIcon greninjaPic = new ImageIcon("Greninja.png");
+        Image moicon4 = greninjaPic.getImage();
+        Image modifiedicon4 = moicon4.getScaledInstance(267, 205, java.awt.Image.SCALE_SMOOTH);
+        greninjaPic = new ImageIcon(modifiedicon4);
+        JLabel greninjaLabel = new JLabel(greninjaPic);  
+        evoPic.add(greninjaLabel);
+        p1.add(evoPic);
+
+
+
+
+
+        setSize(700,500);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+    public static void main(String[] args){
+        new Evolution();
+    }
+
+}

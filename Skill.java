@@ -1,5 +1,5 @@
 
-public class Skill {
+public abstract class Skill {
 
     protected int damage;
     protected int mpUse;

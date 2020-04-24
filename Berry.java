@@ -3,11 +3,11 @@ public class Berry extends Item{
 
     protected int forHP;
     protected int forMp;
-
+    Player player;
     public Berry(){
         super("Berry");
-        forHP = 25;
-        forMp = 20;
+        forHP = 200;
+        forMp = 160;
     }
     
     public int getForHp(){

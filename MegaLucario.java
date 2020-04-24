@@ -5,7 +5,7 @@ public class MegaLucario extends WildPokemon{
         super("MegaLucario");
         maxHp = 3252;
         hp = maxHp;
-        exp = 680;
+        exp = 720;
         level = 70;
         dmg = 380;
         dropRate = 90;

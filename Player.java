@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Player {
+public abstract class Player {
     protected int hp;
     protected int mp;
     protected int exp;

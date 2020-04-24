@@ -27,7 +27,7 @@ public class Versus extends JFrame{
         p2.add(playImg);
         JPanel enemy = new JPanel();
         enemy.setLayout(new GridLayout(2,2));
-        JPanel MegaCharizardX = new JPanel();
+        //JPanel MegaCharizardX = new JPanel();
         ImageIcon icon1 =new ImageIcon("MegaCharizardX.png");
         Image moicon1 = icon1.getImage();
         Image modifiedicon1 = moicon1.getScaledInstance(214, 185, java.awt.Image.SCALE_SMOOTH);

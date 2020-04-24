@@ -8,7 +8,7 @@ public class Greninja extends Player{
         hp = maxHp;
         mp = maxMp;
         exp = lastPlayer.getexp();
-        myDmg = lastPlayer.getDmg();
+        myDmg = lastPlayer.getDmg() + 1000;
         level = lastPlayer.getlvl();
         myBag = lastPlayer.myBag;
         skills.add(new DarkPulse(myDmg));

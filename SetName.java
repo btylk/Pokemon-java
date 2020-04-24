@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileInputStream;
 
 public class SetName extends JFrame{
     JTextField nametext;
@@ -26,6 +27,17 @@ public class SetName extends JFrame{
         p2.setLayout(new FlowLayout());
         container.add(p1);
         container.add(p2);
+        try 
+		{
+			Font myFont = Font.createFont ( Font.TRUETYPE_FONT, new FileInputStream ( "baby blocks.ttf" ) );
+            myFont = myFont.deriveFont ( Font.BOLD, 15f );
+            nameLabel.setFont(myFont);
+			loginButton.setFont(myFont);
+		} 
+		catch ( Exception error )
+		{
+			System.out.println("File not found");
+		}
         loginButton.addActionListener(new ActionListener(){
         
             @Override

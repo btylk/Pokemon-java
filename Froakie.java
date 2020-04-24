@@ -7,7 +7,7 @@ public class Froakie extends Player{
         hp = maxHp;
         mp = maxMp;
         exp = 0;
-        myDmg = 90;
+        myDmg = 120;
         skills.add(new NormalAttack(myDmg));
         skills.add(new Bubble(myDmg));
         playerPic = "Froakie.png";

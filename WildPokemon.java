@@ -1,5 +1,5 @@
 
-public class WildPokemon {
+public abstract class WildPokemon {
 
     protected int hp;
     protected int maxHp;
